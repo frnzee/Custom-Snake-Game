@@ -6,10 +6,10 @@ public class Apple : MonoBehaviour
 
     private void Start()
     {
-        SpawnFood();
+        MoveFood();
     }
 
-    private void SpawnFood()
+    private void MoveFood()
     {
         float width = _playgroundField.rect.size.x;
         float height = _playgroundField.rect.size.y;
@@ -17,7 +17,7 @@ public class Apple : MonoBehaviour
         float x = (int)(Random.Range(-width / 2 + 100, width / 2 - 100) / 50) * 50;
         float y = (int)(Random.Range(-height / 2 + 100, height / 2 - 100) / 50) * 50;
 
-        Vector2 position = new Vector2(x, y);
+        Vector3 position = new Vector3(x, y, -50);
 
         transform.SetParent(_playgroundField);
         transform.localPosition = position;
@@ -25,9 +25,10 @@ public class Apple : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.GetComponent<Snake>())
+        if (other.gameObject.GetComponent<Snake>() ||
+            other.gameObject.GetComponent<SnakeTail>())
         {
-            SpawnFood();
+            MoveFood();
         }
     }
 }
