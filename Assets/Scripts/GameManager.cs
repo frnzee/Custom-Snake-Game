@@ -8,10 +8,8 @@ public class GameManager : MonoBehaviour
         Game
     }
 
-    //[SerializeField] private RectTransform _playgroundField;
     [SerializeField] private GameObject _startGameMenu;
     [SerializeField] private GameObject _gameOverMenu;
-    //[SerializeField] private GameManager _gameManager;
     [SerializeField] private Snake _snake;
 
     public GameState _currentGameState;
