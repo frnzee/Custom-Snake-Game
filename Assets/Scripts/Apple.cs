@@ -17,7 +17,7 @@ public class Apple : MonoBehaviour
         float x = (int)(Random.Range(-width / 2 + 100, width / 2 - 100) / 50) * 50;
         float y = (int)(Random.Range(-height / 2 + 100, height / 2 - 100) / 50) * 50;
 
-        Vector3 position = new Vector3(x, y, -50);
+        Vector3 position = new(x, y, 0);
 
         transform.SetParent(_playgroundField);
         transform.localPosition = position;

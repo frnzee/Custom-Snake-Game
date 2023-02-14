@@ -14,7 +14,7 @@ public class Snake : MonoBehaviour
     private Vector2 _direction;
     private Vector2 _defaultPosition;
 
-    private List<Transform> _snakeGrow = new List<Transform>();
+    private readonly List<Transform> _snakeGrow = new();
 
     private float _moveTime = 0.2f;
     private float _moveTimer;
@@ -45,7 +45,6 @@ public class Snake : MonoBehaviour
 
         _snakeGrow.Add(snakeGrow);
         _moveTime -= MovementSpeedUp;
-        Debug.Log(_moveTime);
     }
 
     private void OnCollisionEnter2D(Collision2D other)

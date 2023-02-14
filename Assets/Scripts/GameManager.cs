@@ -1,13 +1,7 @@
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public partial class GameManager : MonoBehaviour
 {
-    public enum GameState
-    {
-        None,
-        Game
-    }
-
     [SerializeField] private GameObject _startGameMenu;
     [SerializeField] private GameObject _gameOverMenu;
     [SerializeField] private Snake _snake;
